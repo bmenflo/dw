@@ -1,0 +1,396 @@
+    <!DOCTYPE html>
+    <head>
+    <html lang="es">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller Desarrollo Web</title>
+    <style>
+        /* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Calibri, sans-serif;
+    line-height: 1.6;
+    color: #00008b;
+    background-color: #ffffff;
+    font-size: 16px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Main container */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Sección introducción */
+#sectIntroduccion {
+    padding: 2rem;
+    margin-bottom: 10px;
+}
+
+#sectIntroduccion p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+#verMas {
+    display:none; 
+
+}
+/* MOBILE FIRST - Diseño para celulares */
+.tipoTaller {
+    border-radius: 12px;
+    padding: 2rem 1rem;
+    margin: 10px 0;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    border: 5px solid #00008b;
+}
+
+.tipoTaller h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li a {
+    color: white;
+}
+
+.disabled {
+    pointer-events: none;
+    text-decoration: none;
+}
+
+    /* Artículos de talleres - Mobile First */
+.datosTaller {
+    background: #00008b;
+    border: 5px solid #ffffff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 10px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+}
+
+.datosTaller h3 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.datosTaller p {
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    flex-grow: 1;
+}
+
+/* Botones centrados */
+.datosTaller button {
+    background-color: #c0c0c0;
+    color: #ffffff;
+        border: 5px solid #ffffff;
+    margin: 0 auto;
+    display: block;
+}
+
+.datosTaller a {
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    background: #00008b;
+    color: #ffffff;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+footer article p a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer h6 {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 1rem;
+}
+
+/* TABLET - Media Query para dispositivos medianos */
+@media (min-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    button, select {
+        font-size: 16px;
+        min-width: 150px;
+        padding: 12px 20px;
+    }
+
+    main {
+        padding: 2rem;
+    }
+    
+    #sectIntroduccion {
+        padding: 3rem;
+        margin-bottom: 15px;
+    }
+    
+    .tipoTaller {
+        padding: 2.5rem;
+        margin: 15px 0;
+    }
+    
+    .tipoTaller h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* Container para los artículos en tablet */
+    .tipoTaller {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .tipoTaller > :not(h2) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-between;
+    }
+    
+    .datosTaller {
+        flex: 0 1 calc(50% - 10px);
+        margin: 5px;
+        min-height: 280px;
+    }
+    
+    .datosTaller h3 {
+        font-size: 1.4rem;
+    }
+    
+    .datosTaller button {
+        min-width: 160px;
+        padding: 14px 35px;
+    }
+}
+
+/* LAPTOP/PC - Media Query para dispositivos grandes */
+@media (min-width: 1024px) {
+    header {
+        padding: 3rem 2rem;
+    }
+    
+    header h1 {
+        font-size: 3rem;
+    }
+    
+    main {
+        padding: 3rem;
+    }
+    
+    #sectIntroduccion {
+        padding: 4rem;
+        margin-bottom: 20px;
+    }
+    
+    #sectIntroduccion p {
+        font-size: 1.2rem;
+        line-height: 2;
+    }
+    
+    .tipoTaller {
+        padding: 3rem;
+        margin: 20px 0;
+    }
+    
+    .tipoTaller h2 {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    /* 3 columnas para laptop/PC */
+    .datosTaller {
+        flex: 0 1 calc(33.333% - 10px);
+        margin: 5px;
+        min-height: 320px;
+    }
+    
+    .datosTaller h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .datosTaller p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    .datosTaller button {
+        min-width: 170px;
+        padding: 15px 40px;
+        font-size: 1.1rem;
+    }
+    
+    footer {
+        padding: 3rem 2rem;
+    }
+}
+
+/* DESKTOP EXTRA LARGE - Para pantallas muy grandes */
+@media (min-width: 1200px) {
+    /* 4 columnas para pantallas extra grandes */
+    .datosTaller {
+        flex: 0 1 calc(25% - 10px);
+        min-height: 300px;
+    }
+    
+    main {
+        max-width: 1400px;
+    }
+}
+
+/* Mejoras adicionales de UX */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Enfoque mejorado para accesibilidad */
+button:focus,
+a:focus {
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
+}
+    </style>
+    <script>
+            let semanas = [{id: "S1", dato: "Semana 1"},
+            {id: "S2", dato: "Semana 2"},
+            {id: "S3", dato: "Semana 3"},
+            {id: "S4", dato: "Semana 4"},
+{id: "S5", dato: "Semana 5"},
+            {id: "S6", dato: "Semana 6"},
+            {id: "S7", dato: "Semana 7"}];
+
+        let datosSesiones = [{id: "S1", sesion: "s1", titulo: "Sesión 1", descripcion: "Introducción a HTML5 y estructura global.", audio: "https://drive.google.com/file/d/1VXFNBiguhWAitAlJlzezenfkVWyKegmX/view", pdf: "https://drive.google.com/file/d/1WuhWpSq-cwSiusGl9_lh694VzEiNsaRn/view", codigo: "https://drive.google.com/file/d/1Ce4TV2YWk7GS1cYe9BUHOTZp7jvZnZ-V/view"},
+        {id: "S1", sesion: "s2", titulo: "Sesión 2", descripcion: "Estructura del cuerpo."},
+        {id: "S1", sesion: "s3", titulo: "Sesión 3", descripcion: "Etiquetas básicas - Parte 1."}];
+
+        function sesionesDW() {
+            for (let semana = 0; semana < semanas.length; semana++) {
+        document.write("<section id='sect" + semanas[semana].id + "' class='tipoTaller'>");
+                document.write("<h2>" + semanas[semana].dato + "</h2>");
+                for (let sesion = 0; sesion < datosSesiones.length; sesion++) {
+                    if (semanas[semana].id == datosSesiones[sesion].id) {
+                    document.write("<article class='datosTaller'>");
+                    document.write("<h3>" + datosSesiones[sesion].titulo + ": " + datosSesiones[sesion].descripcion + "</h3>");
+                    document.write("<ul><li><a href='" + datosSesiones[sesion].audio + "' class='" + datosSesiones[sesion].sesion + "' target='_blank'>✔ Reproducir audio</a></li><li><a href='" + datosSesiones[sesion].pdf + "' class='" + datosSesiones[sesion].sesion + "' target='_blank'>✔ Revisar PDF</a></li><li><a href='" + datosSesiones[sesion].codigo + "' class='" + datosSesiones[sesion].sesion + "' target='_blank'>✔ Verificar códigos</a></li></ul>");
+                    document.write("</article>");
+                    }
+                }
+                document.write("</section>");
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Taller: Desarrollo Web desde cero</h1>
+    </header>
+    <main>
+        <section id="sectIntroduccion">
+            <article>
+                <p>Bienvenidos al taller para crear una aplicación web desde cero, aqí encontrarán cada sesión que se realizará por semana.</br>
+                    Recuerda que cada sesión se habilita en la semana que le corresponde y se deshabilita pasado la fecha.</p>
+            </article>
+        </section>
+        <script>
+            sesionesDW();
+        </script>
+    </main>
+    <footer>
+        <article>
+            <!--<p>¿Tienes otras dudas? Envía tu solicitud por Correo o WhatsApp:<br>
+                ✔ 📧: <a href="mailto:tallerdp.appweb@gmail.com?subject=Informaci%C3%B3n%20de%20Talleres" target="_blank">tallerdp.appweb@gmail.com</a><br>
+                ✔ 📱: <a href="tel:992891965">+51 992 891 965</a>
+            </p>-->
+            <h6>&copy; Ing. Brajean Méndiz Flores 2025</h6>
+            </article>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+    const sesiones = [{id: "s1", inicio: new Date("2025-09-01T00:00:00"), fin: new Date("2025-09-07T23:59:59")},
+      {id: "s2", inicio: new Date("2025-09-05T00:00:00"), fin: new Date("2025-09-07T23:59:59")},
+      {id: "s3", inicio: new Date("2025-09-05T00:00:00"), fin: new Date("2025-09-07T23:59:59")},
+      {id: "s4", inicio: new Date("2025-09-08T00:00:00"), fin: new Date("2025-09-14T23:59:59")},
+      {id: "s5", inicio: new Date("2025-09-10T00:00:00"), fin: new Date("2025-09-14T23:59:59")},
+      {id: "s6", inicio: new Date("2025-09-12T00:00:00"), fin: new Date("2025-09-14T23:59:59")}];
+
+    function actualizarEstadoSesiones() {
+        const ahora = new Date();
+
+        sesiones.forEach(sesion => {
+            const enlaces = document.getElementsByClassName(sesion.id); // HTMLCollection
+
+            for (let i = 0; i < enlaces.length; i++) {
+                const enlace = enlaces[i];
+                if (ahora >= sesion.inicio && ahora <= sesion.fin) {
+                enlace.classList.remove("disabled");
+                enlace.setAttribute("aria-disabled", "false");
+                enlace.setAttribute("tabindex", "0");
+                } else {
+                    enlace.classList.add("disabled");
+                    enlace.setAttribute("aria-disabled", "true");
+                    enlace.setAttribute("tabindex", "-1");
+                }
+            }
+        });
+    }
+
+    actualizarEstadoSesiones();
+    setInterval(actualizarEstadoSesiones, 60000);
+</script>
+    <body>
+</body>
+</html>
