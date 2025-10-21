@@ -309,8 +309,8 @@ a:focus {
             {id: "S3", dato: "Semana 3", fecha: "2025-09-20"},
             {id: "S4", dato: "Semana 4", fecha: "2025-09-24"},
 {id: "S5", dato: "Semana 5", fecha: "2025-09-29"},
-            {id: "S6", dato: "Semana 6", fecha: "2025-10-06"},
-            {id: "S7", dato: "Semana 7", fecha: "2025-10-13"}];
+            {id: "S6", dato: "Semana 6", fecha: "2025-10-20"},
+            {id: "S7", dato: "Semana 7", fecha: "2025-10-27"}];
 
         let datosSesiones = [{id: "S1", sesion: "s1", titulo: "Sesión 1", descripcion: "Introducción a HTML5 y estructura global.", audio: "https://drive.google.com/file/d/1VXFNBiguhWAitAlJlzezenfkVWyKegmX/view", pdf: "https://drive.google.com/file/d/1WuhWpSq-cwSiusGl9_lh694VzEiNsaRn/view", codigo: "https://drive.google.com/file/d/1Ce4TV2YWk7GS1cYe9BUHOTZp7jvZnZ-V/view"},
         {id: "S1", sesion: "s2", titulo: "Sesión 2", descripcion: "Estructura del cuerpo.", audio: "https://drive.google.com/file/d/1Sz2yWyHZEqivytplEdpM6zhpZSbt-X-y/view", pdf: "https://drive.google.com/drive/folders/1yIvbfNcQd9Xj8YKN_w7kpB2T65FHZfJ3", codigo: "https://drive.google.com/file/d/1vllAAViW09_QSh-H_-V5Syuw6fDbe9Sv/view"},
@@ -326,7 +326,10 @@ a:focus {
         {id: "S4", sesion: "s12", titulo: "Sesión 12", descripcion: "Estilo de texto.", audio: "https://drive.google.com/file/d/1M1mAMue3x5C_VMr_KbiFg59_dfDqJkXW/view", pdf: "https://drive.google.com/file/d/1ttxyKMhhFwn40JfPNAO_rnBoMnaTbde7/view", codigo: "https://drive.google.com/file/d/1-75aqxSwpBGMHTjjGr6072rfu25gN90e/view"},
         {id: "S5", sesion: "s13", titulo: "Sesión 13", descripcion: "Borde, dimensión y margen.", audio: "https://drive.google.com/file/d/1_CdiIPV9m4n2cCLxoXtPmQ3VaAQgh_LI/view", pdf: "https://drive.google.com/file/d/1levLmO5xSMijVpElYgVWPSyZyrP9FoXQ/view", codigo: "https://drive.google.com/file/d/1KJK4CmmVVQmz7sS3FC04lN59g_WO7U6H/view"},
         {id: "S5", sesion: "s14", titulo: "Sesión 14", descripcion: "Estilos en objetos.", audio: "https://drive.google.com/file/d/1x6Dh4SZQQb03JoYVZGPXVV-ahdE_lxjW/view", pdf: "https://drive.google.com/file/d/1J89Iv0RFSHiztK_BObhRhZptMwqi9Ad8/view", codigo: ""},
-        {id: "S5", sesion: "s15", titulo: "Sesión 15", descripcion: "Práctica 3 y reforzamiento.", audio: "", pdf: "", codigo: ""}];
+        {id: "S5", sesion: "s15", titulo: "Sesión 15", descripcion: "Práctica 3 y reforzamiento.", audio: "", pdf: "", codigo: ""},
+        {id: "S6", sesion: "s16", titulo: "Sesión 16", descripcion: "Creación de barra de navegación.", audio: "https://drive.google.com/file/d/1x6Dh4SZQQb03JoYVZGPXVV-ahdE_lxjW/view", pdf: "https://drive.google.com/file/d/1J89Iv0RFSHiztK_BObhRhZptMwqi9Ad8/view", codigo: ""},
+        {id: "S6", sesion: "s17", titulo: "Sesión 17", descripcion: "Reforzamiento y práctica 3.", audio: "https://drive.google.com/file/d/1x6Dh4SZQQb03JoYVZGPXVV-ahdE_lxjW/view", pdf: "https://drive.google.com/file/d/1J89Iv0RFSHiztK_BObhRhZptMwqi9Ad8/view", codigo: ""},
+        {id: "S6", sesion: "s18", titulo: "Sesión 18", descripcion: "Animaciones y transiciones.", audio: "https://drive.google.com/file/d/1x6Dh4SZQQb03JoYVZGPXVV-ahdE_lxjW/view", pdf: "https://drive.google.com/file/d/1J89Iv0RFSHiztK_BObhRhZptMwqi9Ad8/view", codigo: ""}];
 
         function sesionesDW() {
             for (let semana = 0; semana < semanas.length; semana++) {
@@ -384,7 +387,9 @@ a:focus {
       {id: "s4", inicio: new Date("2025-09-08T18:00:00"), fin: new Date("2025-09-16T23:59:59")}, {id: "s5", inicio: new Date("2025-09-16T23:59:00"), fin: new Date("2025-09-16T23:59:59")}, {id: "s6", inicio: new Date("2025-09-12T18:00:00"), fin: new Date("2025-09-16T23:59:59")},
       {id: "s7", inicio: new Date("2025-09-15T18:00:00"), fin: new Date("2025-09-21T23:59:59")}, {id: "s8", inicio: new Date("2025-09-17T18:00:00"), fin: new Date("2025-09-21T23:59:59")}, {id: "s9", inicio: new Date("2025-09-19T18:00:00"), fin: new Date("2025-09-23T23:59:59")},
       {id: "s10", inicio: new Date("2025-09-22T18:00:00"), fin: new Date("2025-09-30T23:59:59")}, {id: "s11", inicio: new Date("2025-09-24T18:00:00"), fin: new Date("2025-09-30T23:59:59")}, {id: "s12", inicio: new Date("2025-09-26T18:00:00"), fin: new Date("2025-09-30T23:59:59")},
-      {id: "s13", inicio: new Date("2025-09-29T18:00:00"), fin: new Date("2025-10-06T06:00:00")}, {id: "s14", inicio: new Date("2025-10-01T18:00:00"), fin: new Date("2025-10-06T06:00:00")}, {id: "s15", inicio: new Date("2025-10-03T18:00:00"), fin: new Date("2025-10-06T06:00:00")}];
+      {id: "s13", inicio: new Date("2025-09-29T18:00:00"), fin: new Date("2025-10-06T06:00:00")}, {id: "s14", inicio: new Date("2025-10-01T18:00:00"), fin: new Date("2025-10-06T06:00:00")}, {id: "s15", inicio: new Date("2025-10-03T18:00:00"), fin: new Date("2025-10-06T06:00:00")},
+      {id: "s16", inicio: new Date("2025-10-20T18:00:00"), fin: new Date("2025-10-26T23:59:00")}, {id: "s17", inicio: new Date("2025-10-22T18:00:00"), fin: new Date("2025-10-26T23:59:00")}, {id: "s18", inicio: new Date("2025-10-25T18:00:00"), fin: new Date("2025-10-26T23:59:00")},
+      {id: "s19", inicio: new Date("2025-10-27T18:00:00"), fin: new Date("2025-10-31T23:59:00")}, {id: "s20", inicio: new Date("2025-10-29T18:00:00"), fin: new Date("2025-10-31T23:59:00")}];
 
     function actualizarEstadoSesiones() {
         const ahora = new Date();
