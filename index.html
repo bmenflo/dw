@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-    <head>
-    <html lang="es">
+<html lang="es">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taller Desarrollo Web</title>
+    <title>Bmenflo - Talleres 2026</title>
     <style>
         /* Reset y configuración base */
 * {
@@ -17,7 +17,6 @@ body {
     line-height: 1.6;
     color: #00008b;
     background-color: #ffffff;
-    font-size: 16px;
 }
 
 /* Header */
@@ -31,6 +30,34 @@ header {
 header h1 {
     font-size: 2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/*nav*/
+#menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 10px;
+}
+
+#menu button, #menu select, .datosTaller button {
+    font-family: Calibri;
+    font-size: 14px;
+        border-radius: 12px;
+    padding: 12px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#menu button, #menu select {
+    background-color: #ffffff;
+    color: #00008b;
+    border: 3px solid #00008b;
 }
 
 /* Main container */
@@ -71,20 +98,7 @@ main {
     text-align: center;
 }
 
-ul li {
-    list-style: none;
-}
-
-ul li a {
-    color: white;
-}
-
-.disabled {
-    pointer-events: none;
-    text-decoration: none;
-}
-
-    /* Artículos de talleres - Mobile First */
+/* Artículos de talleres - Mobile First */
 .datosTaller {
     background: #00008b;
     border: 5px solid #ffffff;
@@ -222,6 +236,17 @@ footer h6 {
         font-size: 3rem;
     }
     
+    nav {
+        justify-content: flex-start; /* Alinea los elementos al inicio */
+        gap: 20px;
+    }
+
+    button, select {
+        font-size: 18px;
+        min-width: 180px;
+        padding: 15px 30px;
+    }
+
     main {
         padding: 3rem;
     }
@@ -304,117 +329,190 @@ a:focus {
 }
     </style>
     <script>
-            let semanas = [{id: "S1", dato: "Semana 1", fecha: "2025-09-01"},
-            {id: "S2", dato: "Semana 2", fecha: "2025-09-08"},
-            {id: "S3", dato: "Semana 3", fecha: "2025-09-20"},
-            {id: "S4", dato: "Semana 4", fecha: "2025-09-24"},
-{id: "S5", dato: "Semana 5", fecha: "2025-09-29"},
-            {id: "S6", dato: "Semana 6", fecha: "2025-10-20"},
-            {id: "S7", dato: "Semana 7", fecha: "2025-10-27"}];
+            let tiposTalleres = [{id: "HT", nombreTaller: "💻 Herramientas Tecnológicas"},
+            {id: "IA", nombreTaller: "🤖 Inteligencia Artificial (IA)"},
+            {id: "DW", nombreTaller: "⌨️ Desarrollo Web desde cero"},
+            {id: "PW", nombreTaller: "⌨️ Programación desde cero"},
+            {id: "BD", nombreTaller: "💻 Base de Datos desde cero"},
+            {id: "APT", nombreTaller: ""},
+            {id: "AW", nombreTaller: ""}];
 
-        let datosSesiones = [{id: "S1", sesion: "s1", titulo: "Sesión 1", descripcion: "Introducción a HTML5 y estructura global.", audio: "https://drive.google.com/file/d/1VXFNBiguhWAitAlJlzezenfkVWyKegmX/view", pdf: "https://drive.google.com/file/d/1WuhWpSq-cwSiusGl9_lh694VzEiNsaRn/view", codigo: "https://drive.google.com/file/d/1Ce4TV2YWk7GS1cYe9BUHOTZp7jvZnZ-V/view"},
-        {id: "S1", sesion: "s2", titulo: "Sesión 2", descripcion: "Estructura del cuerpo.", audio: "https://drive.google.com/file/d/1Sz2yWyHZEqivytplEdpM6zhpZSbt-X-y/view", pdf: "https://drive.google.com/drive/folders/1yIvbfNcQd9Xj8YKN_w7kpB2T65FHZfJ3", codigo: "https://drive.google.com/file/d/1vllAAViW09_QSh-H_-V5Syuw6fDbe9Sv/view"},
-        {id: "S1", sesion: "s3", titulo: "Sesión 3", descripcion: "Etiquetas básicas - Parte 1.", audio: "https://drive.google.com/file/d/1o6OmAMplM1V_EJNAbbMym458Bs_7gTvQ/view", pdf: "https://drive.google.com/file/d/13ESL1WsG8wNrm8zEs7NUB11AXF2Sg4JV/view", codigo: "https://drive.google.com/file/d/1UCyKYN3ntdnHstVaf_wbJvelzW6JHZYl/view"},
-        {id: "S2", sesion: "s4", titulo: "Sesión 4", descripcion: "Etiquetas básicas - Parte 2.", audio: "https://drive.google.com/file/d/1g9T16yEonmG8p1ykJa4gY2Nwwa6vdHYN/view", pdf: "https://drive.google.com/file/d/1HUIMIVFisw7QaPbBdgrEmz18HsXmAbUH/view", codigo: "https://drive.google.com/file/d/1SaOiPc1DBY__MoIzkvvA7zCLSUvVRRC4/view"},
-        {id: "S2", sesion: "s5", titulo: "Sesión 5", descripcion: "Reforzamiento - Práctica 1", audio: "", pdf: "", codigo: ""},
-        {id: "S2", sesion: "s6", titulo: "Sesión 6", descripcion: "Etiquetas básicas - Parte 3.", audio: "https://drive.google.com/file/d/18xbHSGqa-Yjalbb1MyT3fMrd0dxuez3I/view", pdf: "https://drive.google.com/file/d/1A1Gcq9woAfxhJDXLtT58k1UWE0oIn44p/view", codigo: "https://drive.google.com/file/d/1vMnS_AGWUKOku-E-D8XGX6Ht_n6Qpsra/view"},
-        {id: "S3", sesion: "s7", titulo: "Sesión 7", descripcion: "Continuando con etiquetas básicas - Parte 3.", audio: "", pdf: "", codigo: "https://drive.google.com/file/d/1vMnS_AGWUKOku-E-D8XGX6Ht_n6Qpsra/view"},
-        {id: "S3", sesion: "s8", titulo: "Sesión 8", descripcion: "Etiquetas adicionales.", audio: "https://drive.google.com/file/d/1xkwrQKYUeVewdDJvJ_kIplqpdzSiBcc2/view", pdf: "https://drive.google.com/file/d/1yTnLRTQYWxJwvYEQc1IDFD3ydmf_aTKk/view", codigo: ""},
-        {id: "S3", sesion: "s9", titulo: "Sesión 9", descripcion: "Creando formularios.", audio: "https://drive.google.com/file/d/1-A8qHYJ_JGNVsFzN6o8e4fAX3Fv_OnZf/view", pdf: "https://drive.google.com/file/d/1xe83NhNUoMplFQCXATlbw3CxELI6QEnw/view", codigo: "https://drive.google.com/file/d/1vWqHtWIVLgiyYSW4KgnECRgHzYDfw4vh/view"},
-        {id: "S4", sesion: "s10", titulo: "Sesión 10", descripcion: "Atributos de accesibilidad.", audio: "https://drive.google.com/file/d/1-YGM0DFj2BEr8hFv0SniN8WgdqlU_qkW/view", pdf: "https://drive.google.com/file/d/1XT34YXaRyz_CeGce9UtknIgChyqaKEUy/view", codigo: "https://drive.google.com/file/d/1sz6wUsfzFX92BAC3_m_RiFg9xiXwkubg/view"},
-        {id: "S4", sesion: "s11", titulo: "Sesión 11", descripcion: "Introducción de CSS3 y colores.", audio: "https://drive.google.com/file/d/1exKzkdkQ0l8hikk55FTwGPCLILAqA0WL/view", pdf: "https://drive.google.com/file/d/1OrIahRcfuS1o1Lq2CTvTLLC87Ec2nHHX/view", codigo: "https://drive.google.com/file/d/1NBIPTLDs8CvmbBX5Nqfpl8bp53PSa0vW/view"},
-        {id: "S4", sesion: "s12", titulo: "Sesión 12", descripcion: "Estilo de texto.", audio: "https://drive.google.com/file/d/1M1mAMue3x5C_VMr_KbiFg59_dfDqJkXW/view", pdf: "https://drive.google.com/file/d/1ttxyKMhhFwn40JfPNAO_rnBoMnaTbde7/view", codigo: "https://drive.google.com/file/d/1-75aqxSwpBGMHTjjGr6072rfu25gN90e/view"},
-        {id: "S5", sesion: "s13", titulo: "Sesión 13", descripcion: "Borde, dimensión y margen.", audio: "https://drive.google.com/file/d/1_CdiIPV9m4n2cCLxoXtPmQ3VaAQgh_LI/view", pdf: "https://drive.google.com/file/d/1levLmO5xSMijVpElYgVWPSyZyrP9FoXQ/view", codigo: "https://drive.google.com/file/d/1KJK4CmmVVQmz7sS3FC04lN59g_WO7U6H/view"},
-        {id: "S5", sesion: "s14", titulo: "Sesión 14", descripcion: "Estilos en objetos.", audio: "https://drive.google.com/file/d/1x6Dh4SZQQb03JoYVZGPXVV-ahdE_lxjW/view", pdf: "https://drive.google.com/file/d/1J89Iv0RFSHiztK_BObhRhZptMwqi9Ad8/view", codigo: ""},
-        {id: "S5", sesion: "s15", titulo: "Sesión 15", descripcion: "Práctica 3 y reforzamiento.", audio: "", pdf: "", codigo: ""},
-        {id: "S6", sesion: "s16", titulo: "Sesión 16", descripcion: "Creación de barra de navegación.", audio: "https://drive.google.com/file/d/1x6Dh4SZQQb03JoYVZGPXVV-ahdE_lxjW/view", pdf: "https://drive.google.com/file/d/1J89Iv0RFSHiztK_BObhRhZptMwqi9Ad8/view", codigo: ""},
-        {id: "S6", sesion: "s17", titulo: "Sesión 17", descripcion: "Reforzamiento y práctica 3.", audio: "https://drive.google.com/file/d/1x6Dh4SZQQb03JoYVZGPXVV-ahdE_lxjW/view", pdf: "https://drive.google.com/file/d/1J89Iv0RFSHiztK_BObhRhZptMwqi9Ad8/view", codigo: ""},
-        {id: "S6", sesion: "s18", titulo: "Sesión 18", descripcion: "Animaciones y transiciones.", audio: "https://drive.google.com/file/d/1x6Dh4SZQQb03JoYVZGPXVV-ahdE_lxjW/view", pdf: "https://drive.google.com/file/d/1J89Iv0RFSHiztK_BObhRhZptMwqi9Ad8/view", codigo: ""}];
+        let datosTalleres = [{id: "HT", titulo: "Introducción Herramientas Tecnológicas", descripcion: "Descubre las herramientas digitales esenciales que todo profesional necesita dominar en el mundo actual. Aprende a optimizar tu productividad y eficiencia laboral con las tecnologías más demandadas del mercado."}, {id: "HT", titulo: "Microsoft Excel Intermedio", descripcion: "Domina funciones avanzadas, tablas dinámicas y análisis de datos. Convierte información compleja en reportes profesionales que impresionen en tu trabajo y potencien tu carrera profesional."}, {id: "HT", titulo: "Macro Excel Básico", descripcion: "Automatiza tareas repetitivas y crea soluciones personalizadas con programación VBA. Ahorra horas de trabajo manual y conviértete en el experto en automatización de tu empresa."},
+        {id: "IA", titulo: "Introducción IA", descripcion: "Descubre el futuro de la tecnología y cómo la IA está transformando todas las industrias. Aprende conceptos fundamentales, herramientas prácticas y cómo implementar soluciones de IA para automatizar procesos y potenciar tu productividad profesional."}, {id: "IA", titulo: "IA Multi-Archivos", descripcion: "Crea, edita y transforma imágenes profesionales, genera voces sintéticas, transcribe audios automáticamente y produce videos de alta calidad. Domina herramientas para generar contenido visual impactante con la IA."},
+        {id: "DW", titulo: "Introducción Desarrollo Web", descripcion: "Construye tu primera página web profesional desde cero. Aprende los fundamentos del desarrollo web moderno y da el primer paso hacia una carrera en tecnología con alta demanda laboral."}, {id: "DW", titulo: "JavaScript Básico", descripcion: "Dale vida e interactividad a tus páginas web. Domina el lenguaje de programación más popular del mundo y abre las puertas a infinitas posibilidades en el desarrollo web y aplicaciones."}, {id: "DW", titulo: "React Básico", descripcion: "Crea aplicaciones web modernas y dinámicas con la librería más utilizada por empresas como Facebook, Netflix y Airbnb. Accede a oportunidades laborales con salarios superiores al promedio."}, {id: "DW", titulo: "Angular 16 Básico", descripcion: "Desarrolla aplicaciones empresariales robustas y escalables con el framework de Google. Posiciónate como desarrollador senior en proyectos de gran envergadura y alta complejidad técnica."},
+        {id: "PW", titulo: "Introducción Programación Web", descripcion: "Inicia tu camino en la programación web sin conocimientos previos. Aprende la lógica de programación y conceptos fundamentales que te prepararán para cualquier lenguaje o tecnología."}, {id: "PW", titulo: "NodeJS Básico", descripcion: "Programa del lado del servidor con JavaScript y crea aplicaciones web completas. Unifica tu conocimiento en un solo lenguaje y multiplica tus oportunidades como desarrollador full-stack."}, {id: "PW", titulo: "C# Básico", descripcion: "Domina uno de los lenguajes más potentes y versátiles de Microsoft. Desde aplicaciones de escritorio hasta servicios web empresariales, C# te abre puertas en el ecosistema tecnológico corporativo."}, {id: "PW", titulo: "PHP Básico", descripcion: "Aprende el lenguaje que impulsa el 80% de los sitios web del mundo, incluyendo WordPress y Facebook. Desarrolla aplicaciones web dinámicas y sistemas de gestión con gran demanda laboral."}, {id: "PW", titulo: "Python Básico", descripcion: "Incursiona en el lenguaje más popular para ciencia de datos, inteligencia artificial y automatización. Python es tu puerta de entrada a las tecnologías del futuro con el mayor crecimiento profesional."},
+        {id: "BD", titulo: "Introducción Base de Datos", descripcion: "Comprende cómo se almacena y organiza la información en el mundo digital. Aprende los conceptos fundamentales que todo profesional tecnológico debe manejar para gestionar datos eficientemente."}, {id: "BD", titulo: "SQL Server Básico", descripcion: "Maneja bases de datos empresariales con el sistema de Microsoft. Consulta, actualiza y administra información crítica de negocios con una de las herramientas más utilizadas en el sector corporativo."}, {id: "BD", titulo: "MySQL Básico", descripcion: "Domina la base de datos open source más popular del mundo. Gestiona información de aplicaciones web y sistemas empresariales con la tecnología que prefieren startups y grandes corporaciones."},
+        {id: "APT", titulo: "📚 Asesoría de Proyecto de Tesis", descripcion: "¿Te sientes abrumado por tu proyecto de tesis? Nosotros te guiamos en cada paso del camino, desde la elección del tema hasta la presentación final.<br>Con nuestra asesoría personalizada, transformarás tu idea en un proyecto sólido y exitoso. Olvídate del estrés, enfócate en tus objetivos y gradúate con honores. ¡Tu éxito es nuestra prioridad!"},
+        {id: "AW", titulo: "🌐 Accesibilidad Web", descripcion: "¿Sabías que una web accesible no solo es ética, sino también más rentable? Obtén tu aplicación web inclusivo que lleguen a una audiencia más amplia, incluyendo a personas con discapacidad.<br>Dominará las normativas y herramientas para diseñar experiencias de usuario universales, mejorando el SEO y cumpliendo con estándares internacionales. ¡Haz que tu web sea para todos y destaca en el mercado!"}];
 
-        function sesionesDW() {
-            for (let semana = 0; semana < semanas.length; semana++) {
-        document.write("<section id='sect" + semanas[semana].id + "' class='tipoTaller'>");
-                document.write("<h2>" + semanas[semana].dato + "</h2>");
-                const fechaHoy = new Date();
-                const fechaInicio = new Date(semanas[semana].fecha);
-                if (fechaHoy - fechaInicio > 6 * 24 * 60 * 60 * 1000) {
-    document.write("<p>Finalizado.</p>");
-                } else if (fechaHoy - fechaInicio <= 0) {
-    document.write("<p>Por iniciar.</p>");
-                } else {
-                for (let sesion = 0; sesion < datosSesiones.length; sesion++) {
-                    if (semanas[semana].id == datosSesiones[sesion].id) {
+        function talleresBMF() {
+            for (let tipoTaller = 0; tipoTaller < tiposTalleres.length; tipoTaller++) {
+        document.write("<section id='sect" + tiposTalleres[tipoTaller].id + "' class='tipoTaller'>");
+                document.write("<h2>" + tiposTalleres[tipoTaller].nombreTaller + "</h2>");
+                for (let taller = 0; taller < datosTalleres.length; taller++) {
+                    if (tiposTalleres[tipoTaller].id == datosTalleres[taller].id) {
                     document.write("<article class='datosTaller'>");
-                    document.write("<h3>" + datosSesiones[sesion].titulo + ": " + datosSesiones[sesion].descripcion + "</h3>");
-                    document.write("<ul><li><a href='" + datosSesiones[sesion].audio + "' class='" + datosSesiones[sesion].sesion + "' target='_blank'>✔ Reproducir audio</a></li><li><a href='" + datosSesiones[sesion].pdf + "' class='" + datosSesiones[sesion].sesion + "' target='_blank'>✔ Revisar PDF</a></li><li><a href='" + datosSesiones[sesion].codigo + "' class='" + datosSesiones[sesion].sesion + "' target='_blank'>✔ Verificar códigos</a></li></ul>");
+                    document.write("<h3>" + datosTalleres[taller].titulo + ":</h3>");
+                    document.write("<p>" + datosTalleres[taller].descripcion + "</p>");
+                    document.write("<button onClick='enviarMensaje(\"" + datosTalleres[taller].titulo + "\")'>Inicia ya!</button>");
                     document.write("</article>");
                     }
-                }
                 }
                 document.write("</section>");
             }
         }
 
+        function enviarMensaje(nomTaller) {
+            let numeroCelular = '51992891965';
+            let mensaje = '¡Hola Bmenflo Access Consulting! Me gustaría tener más información del Taller ' + nomTaller + '. ☺';
+            let mensajeCodificado = encodeURIComponent(mensaje);
+            let urlWhatsApp = `https://wa.me/${numeroCelular}?text=${mensajeCodificado}`;
+            window.open(urlWhatsApp, '_blank');
+        }
     </script>
 </head>
 <body>
     <header>
-        <h1>Taller: Desarrollo Web desde cero</h1>
+        <h1>Bmenflo Access Consulting</h1>
     </header>
+    <nav id="menu">
+        <button id="btnHT">Herramientas Tecnológicas</button>
+        <button id="btnIA">Inteligencia Artificial</button>
+        <select id="sltWeb">
+            <option value="TW">Talleres Web</option>
+            <option value="DW">Desarrollo Web</option>
+            <option value="PW">Programación Web</option>
+            <option value="BD">Base de Datos</option>
+        </select>
+        <button id="btnAPT">Asesoría Proyecto Tesis</button>
+        <button id="btnAW">Accesibilidad Web</button>
+    </nav>
     <main>
         <section id="sectIntroduccion">
             <article>
-                <p>Bienvenidos al taller para crear una aplicación web desde cero, aqí encontrarán cada sesión que se realizará por semana.</br>
-                    Recuerda que cada sesión se habilita en la semana que le corresponde y se deshabilita pasado la fecha.</p>
+                <p><b>Transforma tu futuro tecnológico con expertos para personas con o sin discapacidad.</b> <a ID="verMas" href="#">Mostrar más información...</a></p>
+                <p class="mostrarTexto">¿Deseas dominar las tecnologías que están revolucionando el mundo? Aquí convertimos esa visión en realidad.<br>
+                Contamos con Ingenieros de Sistemas con más de 10 años de experiencia creando aplicaciones web empresariales desde cero. Esta combinación única de experiencia práctica y formación académica avanzada nos permite ofrecerte una educación tecnológica de primer nivel.</p>
+
+                <p class="mostrarTexto">Te acompañamos en tu crecimiento profesional: 🚀<br>
+                ✔ Talleres al 100% accesibles en Herramientas Tecnológicas, Inteligencia Artificial y Programación Web.<br>
+                ✔ Desarrollo de aplicaciones web empresariales a medida para tu negocio.<br>
+                ✔ Asesoría completa para tu proyecto de tesis de pregrado.</p>
+
+                <p class="mostrarTexto">🔈 Promociones 2026:<br>
+                ✔ Herramientas Tecnológicas e Inteligencia Artificial con <b>descuento</b>!<br>
+                ✔  Desarrollo y Programación Web con <b>descuento</b>!<br>
+                ✔ Base de datos con <b>descuento</b>!</p>
             </article>
         </section>
         <script>
-            sesionesDW();
+            talleresBMF();
         </script>
     </main>
     <footer>
         <article>
-            <!--<p>¿Tienes otras dudas? Envía tu solicitud por Correo o WhatsApp:<br>
+            <p>¿Tienes otras dudas? Envía tu solicitud por Correo o WhatsApp:<br>
                 ✔ 📧: <a href="mailto:tallerdp.appweb@gmail.com?subject=Informaci%C3%B3n%20de%20Talleres" target="_blank">tallerdp.appweb@gmail.com</a><br>
                 ✔ 📱: <a href="tel:992891965">+51 992 891 965</a>
-            </p>-->
-            <h6>&copy; Ing. Brajean Méndiz Flores 2025</h6>
+            </p>
+            <h6>&copy; 2021-2026 Bmenflo Access Consulting</h6>
             </article>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-    const sesiones = [{id: "s1", inicio: new Date("2025-09-01T00:00:00"), fin: new Date("2025-09-16T23:59:59")}, {id: "s2", inicio: new Date("2025-09-05T18:00:00"), fin: new Date("2025-09-16T23:59:59")}, {id: "s3", inicio: new Date("2025-09-08T18:00:00"), fin: new Date("2025-09-16T23:59:59")},
-      {id: "s4", inicio: new Date("2025-09-08T18:00:00"), fin: new Date("2025-09-16T23:59:59")}, {id: "s5", inicio: new Date("2025-09-16T23:59:00"), fin: new Date("2025-09-16T23:59:59")}, {id: "s6", inicio: new Date("2025-09-12T18:00:00"), fin: new Date("2025-09-16T23:59:59")},
-      {id: "s7", inicio: new Date("2025-09-15T18:00:00"), fin: new Date("2025-09-21T23:59:59")}, {id: "s8", inicio: new Date("2025-09-17T18:00:00"), fin: new Date("2025-09-21T23:59:59")}, {id: "s9", inicio: new Date("2025-09-19T18:00:00"), fin: new Date("2025-09-23T23:59:59")},
-      {id: "s10", inicio: new Date("2025-09-22T18:00:00"), fin: new Date("2025-09-30T23:59:59")}, {id: "s11", inicio: new Date("2025-09-24T18:00:00"), fin: new Date("2025-09-30T23:59:59")}, {id: "s12", inicio: new Date("2025-09-26T18:00:00"), fin: new Date("2025-09-30T23:59:59")},
-      {id: "s13", inicio: new Date("2025-09-29T18:00:00"), fin: new Date("2025-10-06T06:00:00")}, {id: "s14", inicio: new Date("2025-10-01T18:00:00"), fin: new Date("2025-10-06T06:00:00")}, {id: "s15", inicio: new Date("2025-10-03T18:00:00"), fin: new Date("2025-10-06T06:00:00")},
-      {id: "s16", inicio: new Date("2025-10-20T18:00:00"), fin: new Date("2025-10-26T23:59:00")}, {id: "s17", inicio: new Date("2025-10-22T18:00:00"), fin: new Date("2025-10-26T23:59:00")}, {id: "s18", inicio: new Date("2025-10-25T18:00:00"), fin: new Date("2025-10-26T23:59:00")},
-      {id: "s19", inicio: new Date("2025-10-27T18:00:00"), fin: new Date("2025-10-31T23:59:00")}, {id: "s20", inicio: new Date("2025-10-29T18:00:00"), fin: new Date("2025-10-31T23:59:00")}];
+        $(document).ready(function(){
+            //Ocultando los talleres
+            $("#sectIA").hide();
+            $("#sectDW").hide();
+                        $("#sectPW").hide();
+            $("#sectBD").hide();
+            $("#sectAPT").hide();
+            $("#sectAW").hide();
 
-    function actualizarEstadoSesiones() {
-        const ahora = new Date();
+            //Motrando Talleres HT
+            $("#btnHT").click(function(){
+                $("#verMas").show();
+                $(".mostrarTexto").hide();
+            $("#sectHT").show();
+            $("#sectIA").hide();
+            $("#sectDW").hide();
+                        $("#sectPW").hide();
+            $("#sectBD").hide();
+            $("#sectAPT").hide();
+            $("#sectAW").hide();
+            });
 
-        sesiones.forEach(sesion => {
-            const enlaces = document.getElementsByClassName(sesion.id); // HTMLCollection
+            //Motrando Talleres IAs
+            $("#btnIA").click(function(){
+                $("#verMas").show();
+                $(".mostrarTexto").hide();
+            $("#sectHT").hide();
+            $("#sectIA").show();
+            $("#sectDW").hide();
+                        $("#sectPW").hide();
+            $("#sectBD").hide();
+            $("#sectAPT").hide();
+            $("#sectAW").hide();
+            });
 
-            for (let i = 0; i < enlaces.length; i++) {
-                const enlace = enlaces[i];
-                if (ahora >= sesion.inicio && ahora <= sesion.fin) {
-                enlace.classList.remove("disabled");
-                enlace.setAttribute("aria-disabled", "false");
-                enlace.setAttribute("tabindex", "0");
-                } else {
-                    enlace.classList.add("disabled");
-                    enlace.setAttribute("aria-disabled", "true");
-                    enlace.setAttribute("tabindex", "-1");
-                }
+            //Motrando Talleres DW, PW y BD 
+            $("#sltWeb").change(function(){
+                let tallerWeb = $(this).val();
+
+                $("#verMas").show();
+                $(".mostrarTexto").hide();
+            $("#sectHT").hide();
+            $("#sectIA").hide();
+            $("#sectAPT").hide();
+            $("#sectAW").hide();
+
+            if (tallerWeb === "DW") {
+                $("#sectDW").show();
+                $("#sectPW").hide();
+                $("#sectBD").hide();
+            } else if (tallerWeb === "PW") {
+                $("#sectDW").hide();
+                $("#sectPW").show();
+                $("#sectBD").hide();
+            } else if (tallerWeb === "BD") {
+                $("#sectDW").hide();
+                $("#sectPW").hide();
+                $("#sectBD").show();
             }
-        });
-    }
+            });
 
-    actualizarEstadoSesiones();
-    setInterval(actualizarEstadoSesiones, 60000);
-</script>
-    <body>
+            //Motrando APT
+            $("#btnAPT").click(function(){
+                $("#verMas").show();
+                $(".mostrarTexto").hide();
+            $("#sectHT").hide();
+            $("#sectIA").hide();
+            $("#sectDW").hide();
+                        $("#sectPW").hide();
+            $("#sectBD").hide();
+            $("#sectAPT").show();
+            $("#sectAW").hide();
+            });
+
+            //Motrando AW
+            $("#btnAW").click(function(){
+                $("#verMas").show();
+                $(".mostrarTexto").hide();
+            $("#sectHT").hide();
+            $("#sectIA").hide();
+            $("#sectDW").hide();
+                        $("#sectPW").hide();
+            $("#sectBD").hide();
+            $("#sectAPT").hide();
+            $("#sectAW").show();
+            });
+
+            $("#verMas").click(function() {
+                $("#verMas").hide();
+    $(".mostrarTexto").show();
+            });
+        });
+
+    </script>
 </body>
 </html>
